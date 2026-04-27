@@ -73,12 +73,30 @@ export default function HomePage() {
           <div className="hero-corner hero-corner-left" />
           <div className="hero-corner hero-corner-right" />
           <div className="hero-top-line" />
+          <div className="hero-tech-strokes hero-tech-strokes-left" />
+          <div className="hero-tech-strokes hero-tech-strokes-right" />
 
           <div className="relative px-5 pb-10 pt-10 sm:px-8 lg:px-10 lg:pb-14 lg:pt-12">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(47,230,255,0.13),transparent_18%),radial-gradient(circle_at_78%_22%,rgba(255,112,37,0.12),transparent_16%)]" />
 
-            <div className="relative grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
-              <div className="pt-2">
+            <div className="relative grid gap-8 lg:grid-cols-[180px_minmax(0,1fr)_220px] lg:items-start">
+              <aside className="hidden lg:block">
+                <div className="mini-preview-card">
+                  <div className="mini-preview-lines" />
+                  <div className="mini-phone-card">
+                    <div className="mini-phone-glow" />
+                    <div className="mini-phone-title">生成示例</div>
+                    <div className="mini-phone-screen">
+                      <div className="mini-screen-top" />
+                      <div className="mini-screen-block" />
+                      <div className="mini-screen-block mini-screen-block-wide" />
+                      <div className="mini-screen-block" />
+                    </div>
+                  </div>
+                </div>
+              </aside>
+
+              <div className="pt-2 text-center lg:text-left">
                 <span className="cyber-eyebrow">从 PDF / DOCX / 文本到可视知识</span>
                 <h1 className="hero-title mt-6">
                   GPT Image 2
@@ -92,7 +110,7 @@ export default function HomePage() {
                   从 PDF / DOCX / 文本 / 主题描述中提炼重点，自动生成精美卡片与知识图谱，让知识更易理解、记忆与分享。
                 </p>
 
-                <div className="mt-7 flex flex-wrap gap-3">
+                <div className="mt-7 flex flex-wrap justify-center gap-3 lg:justify-start">
                   {quickTags.map((tag) => (
                     <span key={tag} className="cyber-chip">
                       {tag}
@@ -119,7 +137,7 @@ export default function HomePage() {
               </aside>
             </div>
 
-            <div id="generate" className="generator-panel mt-10">
+            <div id="generate" className="generator-panel mx-auto mt-10 max-w-5xl">
               <div className="tab-row">
                 <button className="panel-tab panel-tab-active" type="button">
                   上传文档
@@ -183,6 +201,12 @@ export default function HomePage() {
                 <p className="mt-3 text-sm leading-7 text-[var(--text-muted)]">{feature.copy}</p>
               </article>
             ))}
+          </div>
+
+          <div className="mt-8 text-center">
+            <a href="#generate" className="sample-link">
+              查看案例演示 →
+            </a>
           </div>
         </section>
 
