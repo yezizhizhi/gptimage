@@ -1,11 +1,24 @@
 import Link from "next/link";
 
+const navItems = ["功能", "模板库", "案例", "定价", "帮助中心"];
 const quickTags = ["可视卡片", "知识图谱", "可视化总结"];
-
-const examples = [
-  "把笔记或教材整理成可视卡片",
-  "把长文档生成知识图谱",
-  "把 PDF / DOCX 转成可视化总结"
+const features = [
+  {
+    title: "多源内容解析",
+    copy: "支持 PDF / DOCX / 文本内容输入，自动提炼重点与结构。"
+  },
+  {
+    title: "可视卡片生成",
+    copy: "自动生成知识卡片，信息清晰，视觉精致，适合传播。"
+  },
+  {
+    title: "知识图谱构建",
+    copy: "智能生成知识图谱，展示概念关系与关键连接。"
+  },
+  {
+    title: "导出与分享",
+    copy: "支持导出图片与文档格式，便于分享与二次创作。"
+  }
 ];
 
 const faqs = [
@@ -26,102 +39,158 @@ const faqs = [
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[var(--bg)] text-[var(--text-primary)]">
-      <div className="mx-auto flex min-h-screen max-w-6xl flex-col px-6 pb-14 pt-6 lg:px-8">
-        <header className="flex items-center justify-between">
-          <Link href="/" className="text-lg font-semibold tracking-[-0.03em] text-white">
-            VisualCard.ai
+    <main className="cyber-shell min-h-screen text-[var(--text-primary)]">
+      <div className="tech-grid" />
+      <div className="tech-orb tech-orb-left" />
+      <div className="tech-orb tech-orb-right" />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 pb-14 pt-4 sm:px-6 lg:px-8">
+        <header className="cyber-nav">
+          <Link href="/" className="brand-mark">
+            <span className="brand-icon">△</span>
+            <span>GPT Image 2</span>
           </Link>
 
+          <nav className="hidden items-center gap-8 text-sm text-[var(--text-muted)] lg:flex">
+            {navItems.map((item) => (
+              <a key={item} href="#generate" className="nav-link">
+                {item}
+              </a>
+            ))}
+          </nav>
+
           <div className="flex items-center gap-3">
-            <a href="#faq" className="hidden text-sm text-[var(--text-secondary)] sm:inline-flex">
-              常见问题
+            <a href="#faq" className="hidden text-sm text-[var(--text-muted)] sm:inline-flex">
+              登录
             </a>
-            <a href="#generate" className="rounded-full border border-white/12 px-4 py-2 text-sm">
-              免费开始
+            <a href="#generate" className="trial-button">
+              免费体验
             </a>
           </div>
         </header>
 
-        <section className="relative flex flex-1 items-center py-14 sm:py-20">
-          <div className="hero-glow" />
+        <section className="hero-frame mt-6 overflow-hidden rounded-[28px]">
+          <div className="hero-corner hero-corner-left" />
+          <div className="hero-corner hero-corner-right" />
+          <div className="hero-top-line" />
 
-          <div className="grid w-full gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-            <div className="relative z-10">
-              <span className="eyebrow">由 GPT Image 2 驱动</span>
-              <h1 className="mt-6 max-w-4xl text-5xl font-semibold leading-[0.95] tracking-[-0.06em] text-white sm:text-6xl lg:text-7xl">
-                GPT Image 2
-                <br />
-                可视卡片生成器
-              </h1>
-              <h2 className="mt-6 max-w-3xl text-2xl font-medium leading-tight tracking-[-0.03em] text-[var(--text-primary)] sm:text-3xl">
-                将任意内容一键生成可视卡片与知识图谱
-              </h2>
-              <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--text-secondary)] sm:text-lg">
-                上传 PDF 或 DOCX，或直接描述你想生成的内容，即可快速生成精美的可视卡片、知识图谱与可视化总结。
-              </p>
+          <div className="relative px-5 pb-10 pt-10 sm:px-8 lg:px-10 lg:pb-14 lg:pt-12">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(47,230,255,0.13),transparent_18%),radial-gradient(circle_at_78%_22%,rgba(255,112,37,0.12),transparent_16%)]" />
 
-              <div className="mt-8 flex flex-wrap gap-3">
-                {quickTags.map((tag) => (
-                  <span key={tag} className="tag-pill">
-                    {tag}
-                  </span>
-                ))}
+            <div className="relative grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+              <div className="pt-2">
+                <span className="cyber-eyebrow">从 PDF / DOCX / 文本到可视知识</span>
+                <h1 className="hero-title mt-6">
+                  GPT Image 2
+                  <br />
+                  可视卡片生成器
+                </h1>
+                <h2 className="mt-5 max-w-3xl text-2xl font-semibold leading-tight tracking-[-0.03em] text-[var(--cyan-soft)] sm:text-[2rem]">
+                  将任意内容一键生成可视卡片与知识图谱
+                </h2>
+                <p className="mt-5 max-w-3xl text-sm leading-7 text-[var(--text-muted)] sm:text-base sm:leading-8">
+                  从 PDF / DOCX / 文本 / 主题描述中提炼重点，自动生成精美卡片与知识图谱，让知识更易理解、记忆与分享。
+                </p>
+
+                <div className="mt-7 flex flex-wrap gap-3">
+                  {quickTags.map((tag) => (
+                    <span key={tag} className="cyber-chip">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
+
+              <aside className="hero-side hidden lg:block">
+                <div className="node-card">
+                  <div className="node-card-label">知识关系图</div>
+                  <div className="knowledge-map">
+                    <span className="map-node map-node-center">核心概念</span>
+                    <span className="map-node map-node-a">知识点</span>
+                    <span className="map-node map-node-b">应用场景</span>
+                    <span className="map-node map-node-c">关联概念</span>
+                    <span className="map-node map-node-d">关键例子</span>
+                    <span className="map-line map-line-a" />
+                    <span className="map-line map-line-b" />
+                    <span className="map-line map-line-c" />
+                    <span className="map-line map-line-d" />
+                  </div>
+                </div>
+              </aside>
             </div>
 
-            <div id="generate" className="panel relative z-10">
-              <p className="text-sm font-medium uppercase tracking-[0.22em] text-[var(--accent)]">
-                立即生成
-              </p>
-              <div className="mt-6 flex flex-col gap-4">
-                <label className="upload-button" htmlFor="landing-upload">
-                  上传 PDF / DOCX
-                </label>
-                <input id="landing-upload" type="file" className="sr-only" accept=".pdf,.doc,.docx" />
-
-                <textarea
-                  className="prompt-input"
-                  rows={5}
-                  placeholder="例如：把这份生物章节整理成 3 张简洁清晰的可视卡片"
-                />
-
-                <button className="primary-button" type="button">
-                  用 GPT Image 2 生成
+            <div id="generate" className="generator-panel mt-10">
+              <div className="tab-row">
+                <button className="panel-tab panel-tab-active" type="button">
+                  上传文档
+                </button>
+                <button className="panel-tab" type="button">
+                  输入主题描述
                 </button>
               </div>
 
-              <p className="mt-5 text-sm leading-7 text-[var(--text-secondary)]">
-                适合文字较多的内容，可生成结构清晰、排版美观的学习与知识可视化内容。
-              </p>
+              <div className="mt-5 rounded-[22px] border border-[rgba(52,221,255,0.28)] bg-[rgba(7,15,26,0.86)] p-4 shadow-[0_0_0_1px_rgba(57,237,255,0.08),0_0_40px_rgba(44,208,255,0.12)] sm:p-5">
+                <label className="upload-zone" htmlFor="landing-upload">
+                  <input
+                    id="landing-upload"
+                    type="file"
+                    className="sr-only"
+                    accept=".pdf,.doc,.docx"
+                  />
+                  <span className="upload-icon">⤴</span>
+                  <span className="upload-title">拖拽文件到此处，或点击上传</span>
+                  <span className="upload-copy">支持 PDF、DOCX，建议单文件 50MB 以内</span>
+                </label>
+
+                <div className="or-divider">或</div>
+
+                <textarea
+                  className="prompt-input"
+                  rows={4}
+                  placeholder="请输入你想生成的主题内容或描述。例如：量子力学的 3 张简洁明亮的可视卡片"
+                />
+
+                <div className="mt-4 grid gap-3 lg:grid-cols-[1fr_1fr_auto]">
+                  <div className="select-like">
+                    <span className="select-label">卡片风格</span>
+                    <span className="select-value">深色科技</span>
+                  </div>
+                  <div className="select-like">
+                    <span className="select-label">输出语言</span>
+                    <span className="select-value">简体中文</span>
+                  </div>
+                  <button className="generate-button" type="button">
+                    生成可视卡片知识图谱
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="grid gap-4 border-y border-white/8 py-6 text-sm text-[var(--text-secondary)] sm:grid-cols-3">
-          <div className="info-chip">支持上传文件</div>
-          <div className="info-chip">支持直接描述需求</div>
-          <div className="info-chip">快速生成精美视觉内容</div>
-        </section>
+        <section className="py-12">
+          <div className="section-headline">
+            <span className="section-dash" />
+            <h3>从数据到洞察，AI 驱动可视化</h3>
+            <span className="section-dash" />
+          </div>
 
-        <section className="py-14">
-          <h3 className="text-2xl font-semibold tracking-[-0.04em] text-white sm:text-3xl">
-            你可以生成什么
-          </h3>
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {examples.map((example) => (
-              <article key={example} className="card">
-                <p className="text-lg leading-8 text-[var(--text-primary)]">{example}</p>
+          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {features.map((feature) => (
+              <article key={feature.title} className="feature-card">
+                <div className="feature-icon">◎</div>
+                <h4 className="mt-6 text-xl font-semibold text-white">{feature.title}</h4>
+                <p className="mt-3 text-sm leading-7 text-[var(--text-muted)]">{feature.copy}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <section id="faq" className="pb-8 pt-4">
-          <h3 className="text-2xl font-semibold tracking-[-0.04em] text-white sm:text-3xl">
-            常见问题
-          </h3>
-          <div className="mt-8 space-y-4">
+        <section id="faq" className="pb-8 pt-3">
+          <div className="section-headline section-headline-left">
+            <h3>常见问题</h3>
+          </div>
+          <div className="mt-7 space-y-4">
             {faqs.map((faq) => (
               <details key={faq.question} className="faq-item">
                 <summary>
@@ -134,22 +203,13 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="mt-8 rounded-[32px] border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.03)] px-6 py-10 text-center shadow-[0_28px_80px_rgba(0,0,0,0.32)] sm:px-8">
-          <h3 className="text-3xl font-semibold tracking-[-0.05em] text-white sm:text-4xl">
-            开始生成你的可视卡片
-          </h3>
-          <a href="#generate" className="primary-button mx-auto mt-6 w-full max-w-xs">
-            上传文件并生成
-          </a>
-        </section>
-
-        <footer className="flex flex-col gap-5 py-10 text-sm text-[var(--text-secondary)] sm:flex-row sm:items-center sm:justify-between">
+        <footer className="footer-bar">
           <div className="flex flex-wrap gap-5">
             <Link href="/">隐私政策</Link>
             <Link href="/">服务条款</Link>
             <Link href="/">联系我们</Link>
           </div>
-          <p>© 2026 VisualCard.ai</p>
+          <p>© 2026 GPTImageStudio.com</p>
         </footer>
       </div>
     </main>
