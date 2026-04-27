@@ -1,0 +1,209 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --bg: #09090b;
+  --panel: rgba(255, 255, 255, 0.04);
+  --panel-strong: rgba(255, 255, 255, 0.07);
+  --text-primary: rgba(244, 244, 245, 0.95);
+  --text-secondary: rgba(228, 228, 231, 0.68);
+  --accent: #f7c96a;
+  --accent-strong: #ff9d3f;
+  --line: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(247, 201, 106, 0.18), transparent 28%),
+    radial-gradient(circle at 80% 0%, rgba(255, 157, 63, 0.16), transparent 24%),
+    linear-gradient(180deg, #101014 0%, #09090b 55%, #050507 100%);
+  color: var(--text-primary);
+  font-family:
+    "Avenir Next", "PingFang SC", "Segoe UI", "Helvetica Neue", "Microsoft YaHei",
+    sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.hero-glow {
+  position: absolute;
+  inset: 4% 0 auto;
+  height: 580px;
+  border-radius: 48px;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(247, 201, 106, 0.18), transparent 25%),
+    radial-gradient(circle at 78% 20%, rgba(255, 157, 63, 0.14), transparent 22%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0));
+  filter: blur(1px);
+  pointer-events: none;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(247, 201, 106, 0.3);
+  background: rgba(247, 201, 106, 0.08);
+  padding: 0.55rem 0.9rem;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.panel,
+.card,
+.faq-item {
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.025)),
+    var(--panel);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 28px 80px rgba(0, 0, 0, 0.28);
+}
+
+.panel {
+  border-radius: 32px;
+  padding: 1.5rem;
+}
+
+.card {
+  border-radius: 28px;
+  padding: 1.5rem;
+}
+
+.tag-pill,
+.info-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.7rem 1rem;
+  color: var(--text-secondary);
+}
+
+.upload-button,
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  padding: 0.95rem 1.25rem;
+  font-weight: 600;
+  transition:
+    transform 0.18s ease,
+    filter 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.upload-button {
+  width: fit-content;
+  cursor: pointer;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+  color: white;
+}
+
+.primary-button {
+  border: 0;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #111114;
+  box-shadow: 0 18px 44px rgba(255, 157, 63, 0.28);
+}
+
+.upload-button:hover,
+.primary-button:hover {
+  filter: brightness(1.04);
+  transform: translateY(-1px);
+}
+
+.prompt-input {
+  width: 100%;
+  resize: vertical;
+  border-radius: 24px;
+  border: 1px solid var(--line);
+  background: rgba(0, 0, 0, 0.16);
+  padding: 1rem 1.1rem;
+  color: white;
+  outline: none;
+}
+
+.prompt-input::placeholder {
+  color: rgba(228, 228, 231, 0.44);
+}
+
+.prompt-input:focus {
+  border-color: rgba(247, 201, 106, 0.38);
+  box-shadow: 0 0 0 3px rgba(247, 201, 106, 0.1);
+}
+
+.faq-item {
+  border-radius: 24px;
+  padding: 0 1.25rem;
+}
+
+.faq-item summary {
+  display: flex;
+  cursor: pointer;
+  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.2rem 0;
+  font-size: 1.06rem;
+  font-weight: 600;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-plus {
+  color: var(--accent);
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.faq-answer {
+  margin: 0;
+  padding: 0 0 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.9;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
