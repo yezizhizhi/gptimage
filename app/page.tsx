@@ -80,7 +80,7 @@ export default function HomePage() {
           <div className="relative px-4 pb-8 pt-8 sm:px-6 lg:px-8 lg:pb-10 lg:pt-8">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(47,230,255,0.13),transparent_18%),radial-gradient(circle_at_78%_22%,rgba(255,112,37,0.12),transparent_16%)]" />
 
-            <div className="relative grid gap-5 md:grid-cols-[140px_minmax(0,1fr)_160px] md:items-start xl:grid-cols-[180px_minmax(0,1fr)_220px]">
+            <div className="relative grid gap-4 md:grid-cols-[120px_minmax(0,1fr)_150px] md:items-start xl:grid-cols-[148px_minmax(0,1fr)_190px]">
               <aside className="hidden md:block">
                 <div className="mini-preview-card">
                   <div className="mini-preview-lines" />
@@ -97,21 +97,21 @@ export default function HomePage() {
                 </div>
               </aside>
 
-              <div className="pt-1 text-center md:text-left">
+              <div className="hero-copy pt-1 text-center md:text-left">
                 <span className="cyber-eyebrow">从 PDF / DOCX / 文本到可视知识</span>
-                <h1 className="hero-title mt-4">
+                <h1 className="hero-title mt-3">
                   GPT Image 2
                   <br />
                   可视卡片生成器
                 </h1>
-                <h2 className="mt-3 max-w-3xl text-[1.55rem] font-semibold leading-tight tracking-[-0.03em] text-[var(--cyan-soft)] sm:text-[1.9rem]">
+                <h2 className="mt-2 max-w-3xl text-[1.28rem] font-semibold leading-tight tracking-[-0.03em] text-[var(--cyan-soft)] sm:text-[1.55rem]">
                   将任意内容一键生成可视卡片与知识图谱
                 </h2>
-                <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--text-muted)] sm:text-[15px] sm:leading-7">
+                <p className="mt-2 max-w-3xl text-[13px] leading-6 text-[var(--text-muted)] sm:text-[14px] sm:leading-6">
                   从 PDF / DOCX / 文本 / 主题描述中提炼重点，自动生成精美卡片与知识图谱，让知识更易理解、记忆与分享。
                 </p>
 
-                <div className="mt-5 flex flex-wrap justify-center gap-3 md:justify-start">
+                <div className="mt-4 flex flex-wrap justify-center gap-2.5 md:justify-start">
                   {quickTags.map((tag) => (
                     <span key={tag} className="cyber-chip">
                       {tag}
@@ -138,7 +138,7 @@ export default function HomePage() {
               </aside>
             </div>
 
-            <div id="generate" className="generator-panel mx-auto mt-6 max-w-5xl">
+            <div id="generate" className="generator-panel mx-auto mt-5 max-w-[1080px]">
               <div className="tab-row">
                 <button className="panel-tab panel-tab-active" type="button">
                   上传文档
@@ -148,7 +148,7 @@ export default function HomePage() {
                 </button>
               </div>
 
-              <div className="mt-5 rounded-[22px] border border-[rgba(52,221,255,0.28)] bg-[rgba(7,15,26,0.86)] p-4 shadow-[0_0_0_1px_rgba(57,237,255,0.08),0_0_40px_rgba(44,208,255,0.12)] sm:p-5">
+              <div className="panel-body mt-4 rounded-[22px] border border-[rgba(52,221,255,0.28)] bg-[rgba(7,15,26,0.86)] p-3.5 shadow-[0_0_0_1px_rgba(57,237,255,0.08),0_0_40px_rgba(44,208,255,0.12)] sm:p-4">
                 <label className="upload-zone" htmlFor="landing-upload">
                   <input
                     id="landing-upload"
@@ -165,11 +165,11 @@ export default function HomePage() {
 
                 <textarea
                   className="prompt-input"
-                  rows={3}
+                  rows={2}
                   placeholder="请输入你想生成的主题内容或描述。例如：量子力学的 3 张简洁明亮的可视卡片"
                 />
 
-                <div className="mt-4 space-y-3">
+                <div className="mt-3 space-y-3">
                   <div>
                     <div className="control-caption">选择模型</div>
                     <div className="model-row">
@@ -185,7 +185,7 @@ export default function HomePage() {
                     </div>
                   </div>
 
-                  <div className="grid gap-3 lg:grid-cols-[1fr_1fr_auto]">
+                  <div className="controls-grid">
                     <div className="select-like">
                       <span className="select-label">卡片风格</span>
                       <span className="select-value">深色科技</span>
@@ -202,24 +202,24 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="mt-8">
+            <div className="mt-6">
               <div className="section-headline">
                 <span className="section-dash" />
                 <h3>从数据到洞察，AI 驱动可视化</h3>
                 <span className="section-dash" />
               </div>
 
-              <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+              <div className="feature-grid mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
                 {features.map((feature) => (
                   <article key={feature.title} className="feature-card">
                     <div className="feature-icon">◎</div>
-                    <h4 className="mt-6 text-xl font-semibold text-white">{feature.title}</h4>
-                    <p className="mt-3 text-sm leading-7 text-[var(--text-muted)]">{feature.copy}</p>
+                    <h4 className="mt-4 text-lg font-semibold text-white">{feature.title}</h4>
+                    <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">{feature.copy}</p>
                   </article>
                 ))}
               </div>
 
-              <div className="mt-6 text-center">
+              <div className="mt-4 text-center">
                 <a href="#generate" className="sample-link">
                   查看案例演示 →
                 </a>
