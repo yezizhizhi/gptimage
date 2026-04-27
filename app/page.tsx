@@ -2,6 +2,7 @@ import Link from "next/link";
 
 const navItems = ["功能", "模板库", "案例", "定价", "帮助中心"];
 const quickTags = ["可视卡片", "知识图谱", "可视化总结"];
+const models = ["GPT Image 2", "Nano Banana", "Gemini 9"];
 const features = [
   {
     title: "多源内容解析",
@@ -168,18 +169,35 @@ export default function HomePage() {
                   placeholder="请输入你想生成的主题内容或描述。例如：量子力学的 3 张简洁明亮的可视卡片"
                 />
 
-                <div className="mt-4 grid gap-3 lg:grid-cols-[1fr_1fr_auto]">
-                  <div className="select-like">
-                    <span className="select-label">卡片风格</span>
-                    <span className="select-value">深色科技</span>
+                <div className="mt-4 space-y-3">
+                  <div>
+                    <div className="control-caption">选择模型</div>
+                    <div className="model-row">
+                      {models.map((model, index) => (
+                        <button
+                          key={model}
+                          className={`model-chip ${index === 0 ? "model-chip-active" : ""}`}
+                          type="button"
+                        >
+                          {model}
+                        </button>
+                      ))}
+                    </div>
                   </div>
-                  <div className="select-like">
-                    <span className="select-label">输出语言</span>
-                    <span className="select-value">简体中文</span>
+
+                  <div className="grid gap-3 lg:grid-cols-[1fr_1fr_auto]">
+                    <div className="select-like">
+                      <span className="select-label">卡片风格</span>
+                      <span className="select-value">深色科技</span>
+                    </div>
+                    <div className="select-like">
+                      <span className="select-label">输出语言</span>
+                      <span className="select-value">简体中文</span>
+                    </div>
+                    <button className="generate-button" type="button">
+                      生成可视卡片知识图谱
+                    </button>
                   </div>
-                  <button className="generate-button" type="button">
-                    生成可视卡片知识图谱
-                  </button>
                 </div>
               </div>
             </div>
