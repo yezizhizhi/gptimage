@@ -1,8 +1,8 @@
 import Link from "next/link";
+import { InteractiveGenerator } from "./interactive-generator";
 
 const navItems = ["功能", "模板库", "案例", "定价", "帮助中心"];
 const quickTags = ["可视卡片", "知识图谱", "可视化总结"];
-const models = ["GPT Image 2", "Nano Banana", "Gemini 9"];
 const features = [
   {
     title: "多源内容解析",
@@ -93,69 +93,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div id="generate" className="generator-panel generator-panel-match mx-auto mt-3 max-w-[980px]">
-              <div className="tab-row tab-row-match">
-                <button className="panel-tab panel-tab-active" type="button">
-                  上传文档
-                </button>
-                <button className="panel-tab" type="button">
-                  输入主题描述
-                </button>
-              </div>
-
-              <div className="panel-body mt-3 rounded-[22px] border border-[rgba(52,221,255,0.28)] bg-[rgba(7,15,26,0.88)] p-3 shadow-[0_0_0_1px_rgba(57,237,255,0.08),0_0_26px_rgba(44,208,255,0.1)]">
-                <div className="hero-form-grid">
-                  <label className="upload-zone upload-zone-compact" htmlFor="landing-upload">
-                    <input
-                      id="landing-upload"
-                      type="file"
-                      className="sr-only"
-                      accept=".pdf,.doc,.docx"
-                    />
-                    <span className="upload-icon">⤴</span>
-                    <span className="upload-title">拖拽文件到此处，或点击上传</span>
-                    <span className="upload-copy">支持 PDF、DOCX、PPTX、TXT（最大 50MB）</span>
-                  </label>
-
-                  <textarea
-                    className="prompt-input prompt-input-compact"
-                    rows={4}
-                    placeholder="请输入你想生成的主题内容或描述。例如：“量子计算的3张简洁明亮的可视卡片”"
-                  />
-                </div>
-
-                <div className="mt-2.5">
-                  <div className="controls-grid controls-grid-four">
-                    <div>
-                      <div className="control-caption">选择模型</div>
-                      <div className="model-row model-row-tight">
-                        {models.map((model, index) => (
-                          <button
-                            key={model}
-                            className={`model-chip ${index === 0 ? "model-chip-active" : ""}`}
-                            type="button"
-                          >
-                            {model}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="select-like">
-                      <span className="select-label">卡片风格</span>
-                      <span className="select-value">深色科技</span>
-                    </div>
-                    <div className="select-like">
-                      <span className="select-label">输出语言</span>
-                      <span className="select-value">简体中文</span>
-                    </div>
-                    <button className="generate-button" type="button">
-                      生成可视卡片知识图谱
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <InteractiveGenerator />
 
             <div className="mt-4">
               <div className="feature-grid mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
