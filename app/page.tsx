@@ -77,68 +77,26 @@ export default function HomePage() {
           <div className="hero-tech-strokes hero-tech-strokes-left" />
           <div className="hero-tech-strokes hero-tech-strokes-right" />
 
-          <div className="hero-left-panel hidden lg:block">
-            <div className="side-panel-title">生成示例</div>
-            <div className="sample-list">
-              <div className="sample-item">
-                <div className="sample-thumb sample-thumb-orange" />
-                <div className="sample-copy">
-                  <span>AI 发展史</span>
-                  <span>时间线</span>
-                </div>
-              </div>
-              <div className="sample-item">
-                <div className="sample-thumb sample-thumb-cyan" />
-                <div className="sample-copy">
-                  <span>量子计算</span>
-                  <span>核心概念</span>
-                </div>
-              </div>
-              <div className="sample-item">
-                <div className="sample-thumb sample-thumb-gold" />
-                <div className="sample-copy">
-                  <span>项目复盘</span>
-                  <span>思维导图</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="hero-right-panel hidden lg:block">
-            <div className="side-panel-title side-panel-title-right">知识关系图</div>
-            <div className="knowledge-map knowledge-map-tight">
-              <span className="map-node map-node-center">核心概念</span>
-              <span className="map-node map-node-a">关联概念</span>
-              <span className="map-node map-node-b">应用场景</span>
-              <span className="map-node map-node-c">知识点</span>
-              <span className="map-node map-node-d">关键例子</span>
-              <span className="map-line map-line-a" />
-              <span className="map-line map-line-b" />
-              <span className="map-line map-line-c" />
-              <span className="map-line map-line-d" />
-            </div>
-          </div>
-
-          <div className="relative px-5 pb-7 pt-7 sm:px-6 lg:px-8 lg:pb-8 lg:pt-6">
+          <div className="relative px-5 pb-6 pt-5 sm:px-6 lg:px-8 lg:pb-6 lg:pt-4">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(47,230,255,0.12),transparent_18%),radial-gradient(circle_at_72%_34%,rgba(255,112,37,0.1),transparent_14%)]" />
 
             <div className="hero-center-copy hero-center-copy-match relative mx-auto text-center">
               <span className="cyber-eyebrow">从 PDF / DOCX / 文本到可视知识</span>
-              <h1 className="hero-title hero-title-match mt-3">
+              <h1 className="hero-title hero-title-match mt-2">
                 GPT Image 2
                 <br />
                 可视卡片生成器
               </h1>
-              <h2 className="mt-2 text-[1.22rem] font-semibold leading-tight tracking-[-0.03em] text-[var(--cyan-soft)] sm:text-[1.45rem]">
+              <h2 className="mt-1.5 text-[1.15rem] font-semibold leading-tight tracking-[-0.03em] text-[var(--cyan-soft)] sm:text-[1.36rem]">
                 将任意内容一键生成可视卡片与知识图谱
               </h2>
-              <p className="mx-auto mt-2 max-w-3xl text-[12px] leading-6 text-[var(--text-muted)] sm:text-[13px]">
+              <p className="mx-auto mt-1.5 max-w-3xl text-[12px] leading-5 text-[var(--text-muted)] sm:text-[13px]">
                 支持 PDF / DOCX / 文本 / 主题描述中提炼重点，自动生成精美卡片与知识图谱，
                 让知识更易理解、记忆与分享。
               </p>
             </div>
 
-            <div id="generate" className="generator-panel generator-panel-match mx-auto mt-5 max-w-[980px]">
+            <div id="generate" className="generator-panel generator-panel-match mx-auto mt-4 max-w-[980px]">
               <div className="tab-row tab-row-match">
                 <button className="panel-tab panel-tab-active" type="button">
                   上传文档
@@ -169,7 +127,7 @@ export default function HomePage() {
                   />
                 </div>
 
-                <div className="mt-3">
+                <div className="mt-2.5">
                   <div className="controls-grid controls-grid-four">
                     <div>
                       <div className="control-caption">选择模型</div>
@@ -202,8 +160,8 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="mt-5">
-              <div className="feature-grid mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+            <div className="mt-4">
+              <div className="feature-grid mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
                 {features.map((feature) => (
                   <article key={feature.title} className="feature-card">
                     <div className="feature-icon">◎</div>
