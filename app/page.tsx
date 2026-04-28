@@ -70,74 +70,76 @@ export default function HomePage() {
           </div>
         </header>
 
-        <section className="hero-frame hero-frame-centered mt-6 overflow-hidden rounded-[28px]">
+        <section className="hero-frame hero-matchup mt-4 overflow-hidden rounded-[28px]">
           <div className="hero-corner hero-corner-left" />
           <div className="hero-corner hero-corner-right" />
           <div className="hero-top-line" />
           <div className="hero-tech-strokes hero-tech-strokes-left" />
           <div className="hero-tech-strokes hero-tech-strokes-right" />
 
-          <div className="hero-side-widget hero-side-widget-left hidden lg:block">
-            <div className="mini-preview-card">
-              <div className="mini-preview-lines" />
-              <div className="mini-phone-card">
-                <div className="mini-phone-glow" />
-                <div className="mini-phone-title">生成示例</div>
-                <div className="mini-phone-screen">
-                  <div className="mini-screen-top" />
-                  <div className="mini-screen-block" />
-                  <div className="mini-screen-block mini-screen-block-wide" />
-                  <div className="mini-screen-block" />
+          <div className="hero-left-panel hidden lg:block">
+            <div className="side-panel-title">生成示例</div>
+            <div className="sample-list">
+              <div className="sample-item">
+                <div className="sample-thumb sample-thumb-orange" />
+                <div className="sample-copy">
+                  <span>AI 发展史</span>
+                  <span>时间线</span>
+                </div>
+              </div>
+              <div className="sample-item">
+                <div className="sample-thumb sample-thumb-cyan" />
+                <div className="sample-copy">
+                  <span>量子计算</span>
+                  <span>核心概念</span>
+                </div>
+              </div>
+              <div className="sample-item">
+                <div className="sample-thumb sample-thumb-gold" />
+                <div className="sample-copy">
+                  <span>项目复盘</span>
+                  <span>思维导图</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="hero-side-widget hero-side-widget-right hidden lg:block">
-            <div className="node-card">
-              <div className="node-card-label">知识关系图</div>
-              <div className="knowledge-map">
-                <span className="map-node map-node-center">核心概念</span>
-                <span className="map-node map-node-a">知识点</span>
-                <span className="map-node map-node-b">应用场景</span>
-                <span className="map-node map-node-c">关联概念</span>
-                <span className="map-node map-node-d">关键例子</span>
-                <span className="map-line map-line-a" />
-                <span className="map-line map-line-b" />
-                <span className="map-line map-line-c" />
-                <span className="map-line map-line-d" />
-              </div>
+          <div className="hero-right-panel hidden lg:block">
+            <div className="side-panel-title side-panel-title-right">知识关系图</div>
+            <div className="knowledge-map knowledge-map-tight">
+              <span className="map-node map-node-center">核心概念</span>
+              <span className="map-node map-node-a">关联概念</span>
+              <span className="map-node map-node-b">应用场景</span>
+              <span className="map-node map-node-c">知识点</span>
+              <span className="map-node map-node-d">关键例子</span>
+              <span className="map-line map-line-a" />
+              <span className="map-line map-line-b" />
+              <span className="map-line map-line-c" />
+              <span className="map-line map-line-d" />
             </div>
           </div>
 
-          <div className="relative px-4 pb-8 pt-8 sm:px-6 lg:px-10 lg:pb-10 lg:pt-8">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_16%,rgba(47,230,255,0.14),transparent_20%),radial-gradient(circle_at_74%_24%,rgba(255,112,37,0.12),transparent_18%)]" />
+          <div className="relative px-5 pb-7 pt-7 sm:px-6 lg:px-8 lg:pb-8 lg:pt-6">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(47,230,255,0.12),transparent_18%),radial-gradient(circle_at_72%_34%,rgba(255,112,37,0.1),transparent_14%)]" />
 
-            <div className="hero-center-copy relative mx-auto max-w-4xl text-center">
+            <div className="hero-center-copy hero-center-copy-match relative mx-auto text-center">
               <span className="cyber-eyebrow">从 PDF / DOCX / 文本到可视知识</span>
-              <h1 className="hero-title mt-4">
+              <h1 className="hero-title hero-title-match mt-3">
                 GPT Image 2
                 <br />
                 可视卡片生成器
               </h1>
-              <h2 className="mt-2 text-[1.32rem] font-semibold leading-tight tracking-[-0.03em] text-[var(--cyan-soft)] sm:text-[1.62rem]">
+              <h2 className="mt-2 text-[1.22rem] font-semibold leading-tight tracking-[-0.03em] text-[var(--cyan-soft)] sm:text-[1.45rem]">
                 将任意内容一键生成可视卡片与知识图谱
               </h2>
-              <p className="mx-auto mt-2 max-w-3xl text-[13px] leading-6 text-[var(--text-muted)] sm:text-[14px] sm:leading-6">
-                从 PDF / DOCX / 文本 / 主题描述中提炼重点，自动生成精美卡片与知识图谱，让知识更易理解、记忆与分享。
+              <p className="mx-auto mt-2 max-w-3xl text-[12px] leading-6 text-[var(--text-muted)] sm:text-[13px]">
+                支持 PDF / DOCX / 文本 / 主题描述中提炼重点，自动生成精美卡片与知识图谱，
+                让知识更易理解、记忆与分享。
               </p>
-
-              <div className="mt-4 flex flex-wrap justify-center gap-2.5">
-                {quickTags.map((tag) => (
-                  <span key={tag} className="cyber-chip">
-                    {tag}
-                  </span>
-                ))}
-              </div>
             </div>
 
-            <div id="generate" className="generator-panel generator-panel-balanced mx-auto mt-5 max-w-[1080px]">
-              <div className="tab-row">
+            <div id="generate" className="generator-panel generator-panel-match mx-auto mt-5 max-w-[980px]">
+              <div className="tab-row tab-row-match">
                 <button className="panel-tab panel-tab-active" type="button">
                   上传文档
                 </button>
@@ -146,44 +148,44 @@ export default function HomePage() {
                 </button>
               </div>
 
-              <div className="panel-body mt-4 rounded-[22px] border border-[rgba(52,221,255,0.28)] bg-[rgba(7,15,26,0.86)] p-3.5 shadow-[0_0_0_1px_rgba(57,237,255,0.08),0_0_40px_rgba(44,208,255,0.12)] sm:p-4">
-                <label className="upload-zone" htmlFor="landing-upload">
-                  <input
-                    id="landing-upload"
-                    type="file"
-                    className="sr-only"
-                    accept=".pdf,.doc,.docx"
+              <div className="panel-body mt-3 rounded-[22px] border border-[rgba(52,221,255,0.28)] bg-[rgba(7,15,26,0.88)] p-3 shadow-[0_0_0_1px_rgba(57,237,255,0.08),0_0_26px_rgba(44,208,255,0.1)]">
+                <div className="hero-form-grid">
+                  <label className="upload-zone upload-zone-compact" htmlFor="landing-upload">
+                    <input
+                      id="landing-upload"
+                      type="file"
+                      className="sr-only"
+                      accept=".pdf,.doc,.docx"
+                    />
+                    <span className="upload-icon">⤴</span>
+                    <span className="upload-title">拖拽文件到此处，或点击上传</span>
+                    <span className="upload-copy">支持 PDF、DOCX、PPTX、TXT（最大 50MB）</span>
+                  </label>
+
+                  <textarea
+                    className="prompt-input prompt-input-compact"
+                    rows={4}
+                    placeholder="请输入你想生成的主题内容或描述。例如：“量子计算的3张简洁明亮的可视卡片”"
                   />
-                  <span className="upload-icon">⤴</span>
-                  <span className="upload-title">拖拽文件到此处，或点击上传</span>
-                  <span className="upload-copy">支持 PDF、DOCX，建议单文件 50MB 以内</span>
-                </label>
+                </div>
 
-                <div className="or-divider">或</div>
-
-                <textarea
-                  className="prompt-input"
-                  rows={2}
-                  placeholder="请输入你想生成的主题内容或描述。例如：量子力学的 3 张简洁明亮的可视卡片"
-                />
-
-                <div className="mt-3 space-y-3">
-                  <div>
-                    <div className="control-caption">选择模型</div>
-                    <div className="model-row justify-center lg:justify-start">
-                      {models.map((model, index) => (
-                        <button
-                          key={model}
-                          className={`model-chip ${index === 0 ? "model-chip-active" : ""}`}
-                          type="button"
-                        >
-                          {model}
-                        </button>
-                      ))}
+                <div className="mt-3">
+                  <div className="controls-grid controls-grid-four">
+                    <div>
+                      <div className="control-caption">选择模型</div>
+                      <div className="model-row model-row-tight">
+                        {models.map((model, index) => (
+                          <button
+                            key={model}
+                            className={`model-chip ${index === 0 ? "model-chip-active" : ""}`}
+                            type="button"
+                          >
+                            {model}
+                          </button>
+                        ))}
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="controls-grid">
                     <div className="select-like">
                       <span className="select-label">卡片风格</span>
                       <span className="select-value">深色科技</span>
@@ -200,27 +202,15 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="mt-6">
-              <div className="section-headline">
-                <span className="section-dash" />
-                <h3>从数据到洞察，AI 驱动可视化</h3>
-                <span className="section-dash" />
-              </div>
-
-              <div className="feature-grid mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+            <div className="mt-5">
+              <div className="feature-grid mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
                 {features.map((feature) => (
                   <article key={feature.title} className="feature-card">
                     <div className="feature-icon">◎</div>
-                    <h4 className="mt-4 text-lg font-semibold text-white">{feature.title}</h4>
+                    <h4 className="mt-3 text-base font-semibold text-white">{feature.title}</h4>
                     <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">{feature.copy}</p>
                   </article>
                 ))}
-              </div>
-
-              <div className="mt-4 text-center">
-                <a href="#generate" className="sample-link">
-                  查看案例演示 →
-                </a>
               </div>
             </div>
           </div>
