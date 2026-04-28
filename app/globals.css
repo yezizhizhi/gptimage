@@ -533,6 +533,20 @@ textarea {
   padding: 0 1rem;
 }
 
+.select-field {
+  width: 100%;
+  appearance: none;
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  outline: none;
+}
+
+.select-field option {
+  background: #07111b;
+  color: white;
+}
+
 .controls-grid {
   display: grid;
   gap: 0.7rem;

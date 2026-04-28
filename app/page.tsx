@@ -4,36 +4,36 @@ import { InteractiveGenerator } from "./interactive-generator";
 const navItems = ["功能", "模板库", "案例", "定价", "帮助中心"];
 const features = [
   {
-    title: "贴纸风格包装",
-    copy: "后端自动把主题包装成统一贴纸 prompt，减少手动调词成本。"
+    title: "多源内容解析",
+    copy: "支持 PDF / DOCX / 文本输入，自动提炼重点与结构。"
   },
   {
-    title: "GPT Image 2 生成",
-    copy: "通过服务端调用 OpenAI gpt-image-2，默认输出 1024x1024。"
+    title: "可视卡片生成",
+    copy: "自动生成卡片内容，信息清晰，视觉精致。"
   },
   {
-    title: "即时预览",
-    copy: "点击 Generate 后直接返回图片，在页面内完成预览与检查。"
+    title: "知识图谱构建",
+    copy: "智能梳理知识关系，快速生成结构图谱。"
   },
   {
-    title: "下载导出",
-    copy: "生成完成后可直接下载 PNG，方便发社媒或继续二次设计。"
+    title: "导出与分享",
+    copy: "支持后续分享与展示，适合教学和传播。"
   }
 ];
 
 const faqs = [
   {
     question: "支持上传什么文件？",
-    answer: "当前最小版本聚焦贴纸生成，只需要输入贴纸主题，不需要上传文件。"
+    answer: "目前支持上传 PDF 和 DOCX 文件，也可以直接输入主题或描述需求。"
   },
   {
     question: "可以生成什么内容？",
-    answer: "可以生成单张贴纸风格插画，适合社媒、表情包、打印和创意素材。"
+    answer: "可以生成可视卡片、知识图谱和可视化总结，也支持贴纸风格图片生成。"
   },
   {
     question: "为什么不直接去 GPT 里生成？",
     answer:
-      "这个页面已经把贴纸风格 prompt、默认参数和返回展示都封装好了，直接输入主题就能稳定出图。"
+      "这个页面专门针对知识可视化内容做了优化，也内置了贴纸风格主题选择，更适合生成结构清晰、结果更稳定的内容。"
   }
 ];
 
@@ -81,13 +81,13 @@ export default function HomePage() {
 
             <div className="hero-center-copy hero-center-copy-match relative mx-auto text-center">
               <h1 className="hero-title hero-title-match hero-title-single mt-1">
-                GPT Image 2 Sticker Generator
+                GPT Image 2 可视卡片生成器
               </h1>
               <h2 className="mt-2 hero-subtitle">
-                输入一个主题，立即生成可爱贴纸风格图片
+                将任意内容一键生成可视卡片与知识图谱
               </h2>
               <p className="hero-description mx-auto mt-2 max-w-3xl">
-                基于 GPT Image 2 的最小可用贴纸生成工具。输入你想要的贴纸主题，系统会自动包装成统一的贴纸风格 prompt，并返回可下载的图片预览。
+                支持 PDF / DOCX / 文本 / 主题描述中提炼重点，自动生成精美卡片与知识图谱，让知识更易理解、记忆与分享。
               </p>
             </div>
 
