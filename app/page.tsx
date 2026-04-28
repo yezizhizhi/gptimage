@@ -81,15 +81,13 @@ export default function HomePage() {
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(47,230,255,0.12),transparent_18%),radial-gradient(circle_at_72%_34%,rgba(255,112,37,0.1),transparent_14%)]" />
 
             <div className="hero-center-copy hero-center-copy-match relative mx-auto text-center">
-              <h1 className="hero-title hero-title-match mt-1">
-                GPT Image 2
-                <br />
-                可视卡片生成器
+              <h1 className="hero-title hero-title-match hero-title-single mt-1">
+                GPT Image 2 可视卡片生成器
               </h1>
-              <h2 className="mt-1.5 text-[1.15rem] font-semibold leading-tight tracking-[-0.03em] text-[var(--cyan-soft)] sm:text-[1.36rem]">
+              <h2 className="mt-2 hero-subtitle">
                 将任意内容一键生成可视卡片与知识图谱
               </h2>
-              <p className="mx-auto mt-1.5 max-w-3xl text-[12px] leading-5 text-[var(--text-muted)] sm:text-[13px]">
+              <p className="hero-description mx-auto mt-2 max-w-3xl">
                 支持 PDF / DOCX / 文本 / 主题描述中提炼重点，自动生成精美卡片与知识图谱，
                 让知识更易理解、记忆与分享。
               </p>

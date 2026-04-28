@@ -292,6 +292,26 @@ textarea {
   line-height: 0.94;
 }
 
+.hero-title-single {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.06em;
+}
+
+.hero-subtitle {
+  color: var(--cyan-soft);
+  font-size: clamp(1.02rem, 2vw, 1.3rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.hero-description {
+  color: var(--text-muted);
+  font-size: 0.84rem;
+  line-height: 1.65;
+}
+
 .cyber-chip {
   display: inline-flex;
   align-items: center;
