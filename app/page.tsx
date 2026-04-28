@@ -81,8 +81,7 @@ export default function HomePage() {
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(47,230,255,0.12),transparent_18%),radial-gradient(circle_at_72%_34%,rgba(255,112,37,0.1),transparent_14%)]" />
 
             <div className="hero-center-copy hero-center-copy-match relative mx-auto text-center">
-              <span className="cyber-eyebrow">从 PDF / DOCX / 文本到可视知识</span>
-              <h1 className="hero-title hero-title-match mt-2">
+              <h1 className="hero-title hero-title-match mt-1">
                 GPT Image 2
                 <br />
                 可视卡片生成器
@@ -96,7 +95,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div id="generate" className="generator-panel generator-panel-match mx-auto mt-4 max-w-[980px]">
+            <div id="generate" className="generator-panel generator-panel-match mx-auto mt-3 max-w-[980px]">
               <div className="tab-row tab-row-match">
                 <button className="panel-tab panel-tab-active" type="button">
                   上传文档
