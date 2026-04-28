@@ -7,13 +7,13 @@ const siteUrl =
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "GPT Image 2 可视卡片生成器 | PDF 一键生成可视卡片与知识图谱",
+  title: "GPT Image 2 Sticker Generator | 在线生成可爱贴纸风格图片",
   description:
-    "使用 GPT Image 2，将 PDF、DOCX 和文字内容快速生成精美的可视卡片、知识图谱与可视化总结。",
+    "使用 GPT Image 2，输入主题后快速生成可爱贴纸风格图片，支持在线预览与下载。",
   openGraph: {
-    title: "GPT Image 2 可视卡片生成器",
+    title: "GPT Image 2 Sticker Generator",
     description:
-      "上传 PDF 或 DOCX，或直接描述需求，快速生成精美的可视卡片、知识图谱与可视化总结。",
+      "输入你想生成的贴纸主题，快速获得可爱、干净、适合社媒和打印的贴纸图片。",
     url: siteUrl,
     siteName: "GPT Image Studio",
     locale: "zh_CN",
