@@ -6,19 +6,19 @@ const models = ["GPT Image 2", "Nano Banana", "Gemini 9"];
 const features = [
   {
     title: "多源内容解析",
-    copy: "支持 PDF / DOCX / 文本内容输入，自动提炼重点与结构。"
+    copy: "支持 PDF / DOCX / 文本输入，自动提炼重点与结构。"
   },
   {
     title: "可视卡片生成",
-    copy: "自动生成知识卡片，信息清晰，视觉精致，适合传播。"
+    copy: "自动生成卡片内容，信息清晰，视觉精致。"
   },
   {
     title: "知识图谱构建",
-    copy: "智能生成知识图谱，展示概念关系与关键连接。"
+    copy: "智能梳理知识关系，快速生成结构图谱。"
   },
   {
     title: "导出与分享",
-    copy: "支持导出图片与文档格式，便于分享与二次创作。"
+    copy: "支持后续分享与展示，适合教学和传播。"
   }
 ];
 
@@ -70,75 +70,73 @@ export default function HomePage() {
           </div>
         </header>
 
-        <section className="hero-frame mt-6 overflow-hidden rounded-[28px]">
+        <section className="hero-frame hero-frame-centered mt-6 overflow-hidden rounded-[28px]">
           <div className="hero-corner hero-corner-left" />
           <div className="hero-corner hero-corner-right" />
           <div className="hero-top-line" />
           <div className="hero-tech-strokes hero-tech-strokes-left" />
           <div className="hero-tech-strokes hero-tech-strokes-right" />
 
-          <div className="relative px-4 pb-8 pt-8 sm:px-6 lg:px-8 lg:pb-10 lg:pt-8">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(47,230,255,0.13),transparent_18%),radial-gradient(circle_at_78%_22%,rgba(255,112,37,0.12),transparent_16%)]" />
-
-            <div className="relative grid gap-4 md:grid-cols-[120px_minmax(0,1fr)_150px] md:items-start xl:grid-cols-[148px_minmax(0,1fr)_190px]">
-              <aside className="hidden md:block">
-                <div className="mini-preview-card">
-                  <div className="mini-preview-lines" />
-                  <div className="mini-phone-card">
-                    <div className="mini-phone-glow" />
-                    <div className="mini-phone-title">生成示例</div>
-                    <div className="mini-phone-screen">
-                      <div className="mini-screen-top" />
-                      <div className="mini-screen-block" />
-                      <div className="mini-screen-block mini-screen-block-wide" />
-                      <div className="mini-screen-block" />
-                    </div>
-                  </div>
-                </div>
-              </aside>
-
-              <div className="hero-copy pt-1 text-center md:text-left">
-                <span className="cyber-eyebrow">从 PDF / DOCX / 文本到可视知识</span>
-                <h1 className="hero-title mt-3">
-                  GPT Image 2
-                  <br />
-                  可视卡片生成器
-                </h1>
-                <h2 className="mt-2 max-w-3xl text-[1.28rem] font-semibold leading-tight tracking-[-0.03em] text-[var(--cyan-soft)] sm:text-[1.55rem]">
-                  将任意内容一键生成可视卡片与知识图谱
-                </h2>
-                <p className="mt-2 max-w-3xl text-[13px] leading-6 text-[var(--text-muted)] sm:text-[14px] sm:leading-6">
-                  从 PDF / DOCX / 文本 / 主题描述中提炼重点，自动生成精美卡片与知识图谱，让知识更易理解、记忆与分享。
-                </p>
-
-                <div className="mt-4 flex flex-wrap justify-center gap-2.5 md:justify-start">
-                  {quickTags.map((tag) => (
-                    <span key={tag} className="cyber-chip">
-                      {tag}
-                    </span>
-                  ))}
+          <div className="hero-side-widget hero-side-widget-left hidden lg:block">
+            <div className="mini-preview-card">
+              <div className="mini-preview-lines" />
+              <div className="mini-phone-card">
+                <div className="mini-phone-glow" />
+                <div className="mini-phone-title">生成示例</div>
+                <div className="mini-phone-screen">
+                  <div className="mini-screen-top" />
+                  <div className="mini-screen-block" />
+                  <div className="mini-screen-block mini-screen-block-wide" />
+                  <div className="mini-screen-block" />
                 </div>
               </div>
+            </div>
+          </div>
 
-              <aside className="hero-side hidden md:block">
-                <div className="node-card">
-                  <div className="node-card-label">知识关系图</div>
-                  <div className="knowledge-map">
-                    <span className="map-node map-node-center">核心概念</span>
-                    <span className="map-node map-node-a">知识点</span>
-                    <span className="map-node map-node-b">应用场景</span>
-                    <span className="map-node map-node-c">关联概念</span>
-                    <span className="map-node map-node-d">关键例子</span>
-                    <span className="map-line map-line-a" />
-                    <span className="map-line map-line-b" />
-                    <span className="map-line map-line-c" />
-                    <span className="map-line map-line-d" />
-                  </div>
-                </div>
-              </aside>
+          <div className="hero-side-widget hero-side-widget-right hidden lg:block">
+            <div className="node-card">
+              <div className="node-card-label">知识关系图</div>
+              <div className="knowledge-map">
+                <span className="map-node map-node-center">核心概念</span>
+                <span className="map-node map-node-a">知识点</span>
+                <span className="map-node map-node-b">应用场景</span>
+                <span className="map-node map-node-c">关联概念</span>
+                <span className="map-node map-node-d">关键例子</span>
+                <span className="map-line map-line-a" />
+                <span className="map-line map-line-b" />
+                <span className="map-line map-line-c" />
+                <span className="map-line map-line-d" />
+              </div>
+            </div>
+          </div>
+
+          <div className="relative px-4 pb-8 pt-8 sm:px-6 lg:px-10 lg:pb-10 lg:pt-8">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_16%,rgba(47,230,255,0.14),transparent_20%),radial-gradient(circle_at_74%_24%,rgba(255,112,37,0.12),transparent_18%)]" />
+
+            <div className="hero-center-copy relative mx-auto max-w-4xl text-center">
+              <span className="cyber-eyebrow">从 PDF / DOCX / 文本到可视知识</span>
+              <h1 className="hero-title mt-4">
+                GPT Image 2
+                <br />
+                可视卡片生成器
+              </h1>
+              <h2 className="mt-2 text-[1.32rem] font-semibold leading-tight tracking-[-0.03em] text-[var(--cyan-soft)] sm:text-[1.62rem]">
+                将任意内容一键生成可视卡片与知识图谱
+              </h2>
+              <p className="mx-auto mt-2 max-w-3xl text-[13px] leading-6 text-[var(--text-muted)] sm:text-[14px] sm:leading-6">
+                从 PDF / DOCX / 文本 / 主题描述中提炼重点，自动生成精美卡片与知识图谱，让知识更易理解、记忆与分享。
+              </p>
+
+              <div className="mt-4 flex flex-wrap justify-center gap-2.5">
+                {quickTags.map((tag) => (
+                  <span key={tag} className="cyber-chip">
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
 
-            <div id="generate" className="generator-panel mx-auto mt-5 max-w-[1080px]">
+            <div id="generate" className="generator-panel generator-panel-balanced mx-auto mt-5 max-w-[1080px]">
               <div className="tab-row">
                 <button className="panel-tab panel-tab-active" type="button">
                   上传文档
@@ -172,7 +170,7 @@ export default function HomePage() {
                 <div className="mt-3 space-y-3">
                   <div>
                     <div className="control-caption">选择模型</div>
-                    <div className="model-row">
+                    <div className="model-row justify-center lg:justify-start">
                       {models.map((model, index) => (
                         <button
                           key={model}
