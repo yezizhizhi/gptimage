@@ -15,10 +15,27 @@ export default function HomePage() {
         </p>
 
         <section className="editorial-hero-card">
-          <div className="editorial-watercolor editorial-watercolor-top-right" />
-          <div className="editorial-watercolor editorial-watercolor-left-bottom" />
-          <div className="editorial-watercolor editorial-watercolor-bottom-band" />
-          <div className="editorial-horizon-fade" />
+          <div className="watercolor-sky" />
+          <div className="landscape" />
+          <div className="mountain-left" />
+          <div className="mountain-right" />
+          <div className="water-line" />
+          <div className="shore-rock shore-rock-left" />
+          <div className="shore-rock shore-rock-left-two" />
+          <div className="shore-rock shore-rock-center" />
+          <div className="shore-rock shore-rock-right" />
+          <div className="shore-rock shore-rock-right-two" />
+          <div className="sailboat sailboat-left">
+            <span className="sail mast" />
+            <span className="sail sail-main" />
+            <span className="sail sail-small" />
+          </div>
+          <div className="sailboat sailboat-center">
+            <span className="sail mast" />
+            <span className="sail sail-main" />
+            <span className="sail sail-small" />
+          </div>
+          <div className="paper-texture" />
 
           <Navbar />
 

@@ -112,61 +112,188 @@ select {
   padding: 0 48px 42px;
   border-radius: 16px;
   border: 1px solid rgba(234, 222, 210, 0.9);
-  background:
-    linear-gradient(180deg, rgba(255, 253, 249, 0.92), rgba(255, 249, 243, 0.9)),
-    var(--card-bg);
+  background: #fbf4ea;
   box-shadow: var(--shadow-soft);
   overflow: hidden;
 }
 
-.editorial-watercolor,
-.editorial-horizon-fade {
+.watercolor-sky,
+.landscape,
+.mountain-left,
+.mountain-right,
+.water-line,
+.shore-rock,
+.sailboat,
+.paper-texture {
   position: absolute;
   pointer-events: none;
 }
 
-.editorial-watercolor-top-right {
-  right: -8%;
-  top: 6%;
-  width: 42%;
-  height: 42%;
+.watercolor-sky {
+  inset: 0;
   background:
-    radial-gradient(circle at 40% 48%, rgba(249, 196, 159, 0.24), transparent 35%),
-    radial-gradient(circle at 58% 38%, rgba(255, 224, 210, 0.24), transparent 32%),
-    radial-gradient(circle at 72% 54%, rgba(243, 179, 138, 0.16), transparent 28%);
-  filter: blur(10px);
+    radial-gradient(circle at 82% 24%, rgba(242, 154, 94, 0.22), transparent 32%),
+    radial-gradient(circle at 70% 42%, rgba(248, 198, 166, 0.28), transparent 34%),
+    radial-gradient(circle at 22% 30%, rgba(238, 202, 156, 0.18), transparent 36%),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.65), rgba(250, 238, 222, 0.25), rgba(244, 217, 184, 0.28));
+  filter: blur(0.2px);
 }
 
-.editorial-watercolor-left-bottom {
-  left: -6%;
-  bottom: 6%;
-  width: 42%;
-  height: 34%;
-  background:
-    radial-gradient(circle at 38% 44%, rgba(244, 199, 156, 0.22), transparent 32%),
-    radial-gradient(circle at 20% 70%, rgba(230, 199, 172, 0.2), transparent 26%);
-  filter: blur(10px);
-}
-
-.editorial-watercolor-bottom-band {
+.landscape {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 28%;
+  height: 42%;
   background:
-    linear-gradient(180deg, transparent 0%, rgba(236, 216, 194, 0.2) 42%, rgba(231, 211, 190, 0.34) 100%),
-    radial-gradient(circle at 16% 78%, rgba(236, 209, 176, 0.28), transparent 16%),
-    radial-gradient(circle at 50% 82%, rgba(248, 231, 213, 0.28), transparent 18%),
-    radial-gradient(circle at 84% 76%, rgba(241, 211, 180, 0.22), transparent 18%);
+    linear-gradient(to bottom, transparent 0%, rgba(247, 218, 184, 0.18) 18%, rgba(231, 190, 142, 0.2) 52%, rgba(250, 239, 224, 0.7) 100%),
+    linear-gradient(8deg, rgba(180, 135, 91, 0.16) 0%, transparent 36%),
+    linear-gradient(-6deg, transparent 45%, rgba(194, 145, 102, 0.14) 62%, transparent 82%);
+  opacity: 0.9;
 }
 
-.editorial-horizon-fade {
-  left: 0;
-  right: 0;
-  bottom: 110px;
-  height: 140px;
+.mountain-left {
+  bottom: 190px;
+  left: 40px;
+  width: 360px;
+  height: 90px;
+  background: rgba(179, 137, 98, 0.16);
+  clip-path: polygon(0 70%, 20% 42%, 38% 60%, 55% 28%, 72% 56%, 100% 40%, 100% 100%, 0 100%);
+  filter: blur(10px);
+}
+
+.mountain-right {
+  bottom: 170px;
+  right: 40px;
+  width: 420px;
+  height: 110px;
+  background: rgba(200, 151, 106, 0.13);
+  clip-path: polygon(0 58%, 18% 38%, 36% 52%, 58% 24%, 72% 48%, 88% 34%, 100% 44%, 100% 100%, 0 100%);
+  filter: blur(12px);
+}
+
+.water-line {
+  bottom: 145px;
+  left: 90px;
+  right: 90px;
+  height: 1px;
+  background: rgba(164, 119, 83, 0.18);
+  box-shadow:
+    0 18px 0 rgba(164, 119, 83, 0.08),
+    0 38px 0 rgba(164, 119, 83, 0.06);
+}
+
+.shore-rock {
+  background: rgba(158, 112, 72, 0.16);
+  border-radius: 50%;
+  filter: blur(8px);
+  opacity: 0.5;
+}
+
+.shore-rock-left {
+  left: 44px;
+  bottom: 56px;
+  width: 190px;
+  height: 52px;
+}
+
+.shore-rock-left-two {
+  left: 180px;
+  bottom: 106px;
+  width: 124px;
+  height: 30px;
+}
+
+.shore-rock-center {
+  left: 50%;
+  bottom: 68px;
+  width: 260px;
+  height: 58px;
+  transform: translateX(-50%);
+}
+
+.shore-rock-right {
+  right: 94px;
+  bottom: 76px;
+  width: 220px;
+  height: 54px;
+}
+
+.shore-rock-right-two {
+  right: 260px;
+  bottom: 122px;
+  width: 112px;
+  height: 28px;
+}
+
+.sailboat {
+  opacity: 0.18;
+  color: rgba(146, 102, 68, 0.35);
+}
+
+.sailboat-left {
+  left: 180px;
+  bottom: 135px;
+}
+
+.sailboat-center {
+  left: 50%;
+  bottom: 120px;
+  transform: translateX(-50%);
+}
+
+.mast {
+  position: absolute;
+  left: 12px;
+  bottom: -2px;
+  width: 1px;
+  height: 22px;
+  background: currentColor;
+}
+
+.sail-main,
+.sail-small {
+  position: absolute;
+  bottom: 8px;
+  width: 0;
+  height: 0;
+}
+
+.sail-main {
+  left: 13px;
+  border-left: 0 solid transparent;
+  border-right: 18px solid transparent;
+  border-bottom: 26px solid currentColor;
+}
+
+.sail-small {
+  left: -9px;
+  border-left: 12px solid transparent;
+  border-right: 0 solid transparent;
+  border-bottom: 18px solid currentColor;
+}
+
+.paper-texture {
+  inset: 0;
+  opacity: 0.18;
+  mix-blend-mode: multiply;
   background:
-    linear-gradient(180deg, transparent 0%, rgba(255, 248, 239, 0.36) 45%, rgba(243, 228, 211, 0.52) 100%);
+    radial-gradient(circle at 20% 22%, rgba(153, 120, 90, 0.06) 0, transparent 1.2px),
+    radial-gradient(circle at 72% 46%, rgba(153, 120, 90, 0.05) 0, transparent 1.4px),
+    radial-gradient(circle at 56% 74%, rgba(153, 120, 90, 0.04) 0, transparent 1.1px),
+    repeating-linear-gradient(
+      0deg,
+      rgba(160, 126, 96, 0.018) 0,
+      rgba(160, 126, 96, 0.018) 1px,
+      transparent 1px,
+      transparent 5px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(160, 126, 96, 0.014) 0,
+      rgba(160, 126, 96, 0.014) 1px,
+      transparent 1px,
+      transparent 6px
+    );
 }
 
 .editorial-navbar {
