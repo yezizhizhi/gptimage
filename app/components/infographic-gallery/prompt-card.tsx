@@ -9,7 +9,7 @@ type PromptCardProps = {
 
 export function PromptCard({ item, onViewDetail, onGenerate, onCopy }: PromptCardProps) {
   return (
-    <article className={`prompt-card prompt-card-${item.height}`}>
+    <article className="prompt-card">
       <button
         type="button"
         className="prompt-card-preview"
