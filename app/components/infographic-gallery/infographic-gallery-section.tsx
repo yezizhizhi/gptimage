@@ -6,15 +6,10 @@ import { SectionHeader } from "./section-header";
 import { GalleryToolbar } from "./gallery-toolbar";
 import { MasonryGrid } from "./masonry-grid";
 import { PromptDetailModal } from "./prompt-detail-modal";
-import { LoadMoreButton } from "./load-more-button";
-
-const INITIAL_VISIBLE = 6;
-const LOAD_MORE_STEP = 4;
 
 export function InfographicGallerySection() {
   const [activeCategory, setActiveCategory] = useState<PromptCategory>("全部");
   const [query, setQuery] = useState("");
-  const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE);
   const [selectedItem, setSelectedItem] = useState<PromptItem | null>(null);
 
   const filteredItems = useMemo(() => {
@@ -32,17 +27,12 @@ export function InfographicGallerySection() {
     });
   }, [activeCategory, query]);
 
-  const visibleItems = filteredItems.slice(0, visibleCount);
-  const hasMore = visibleCount < filteredItems.length;
-
   const handleCategoryChange = (category: PromptCategory) => {
     setActiveCategory(category);
-    setVisibleCount(INITIAL_VISIBLE);
   };
 
   const handleQueryChange = (value: string) => {
     setQuery(value);
-    setVisibleCount(INITIAL_VISIBLE);
   };
 
   const handleCopy = async (item: PromptItem) => {
@@ -62,7 +52,7 @@ export function InfographicGallerySection() {
   return (
     <section className="infographic-gallery-section">
       <div className="infographic-gallery-shell">
-        <SectionHeader onPrimaryAction={() => handleGenerate(promptItems[0])} />
+        <SectionHeader />
 
         <GalleryToolbar
           categories={promptCategories}
@@ -73,13 +63,11 @@ export function InfographicGallerySection() {
         />
 
         <MasonryGrid
-          items={visibleItems}
+          items={filteredItems}
           onViewDetail={setSelectedItem}
           onGenerate={handleGenerate}
           onCopy={handleCopy}
         />
-
-        <LoadMoreButton onClick={() => setVisibleCount((count) => count + LOAD_MORE_STEP)} disabled={!hasMore} />
       </div>
 
       <PromptDetailModal

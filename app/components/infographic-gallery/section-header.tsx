@@ -1,8 +1,4 @@
-type SectionHeaderProps = {
-  onPrimaryAction: () => void;
-};
-
-export function SectionHeader({ onPrimaryAction }: SectionHeaderProps) {
+export function SectionHeader() {
   return (
     <div className="gallery-section-header">
       <div>
@@ -12,10 +8,6 @@ export function SectionHeader({ onPrimaryAction }: SectionHeaderProps) {
           浏览高质量信息图 Prompt 模板，快速获取灵感并一键生成。
         </p>
       </div>
-
-      <button type="button" className="gallery-primary-action" onClick={onPrimaryAction}>
-        Explore More
-      </button>
     </div>
   );
 }
