@@ -17,8 +17,6 @@ export default function HomePage() {
         <section className="editorial-hero-card">
           <div className="watercolor-sky" />
           <div className="landscape" />
-          <div className="mountain-left" />
-          <div className="mountain-right" />
           <div className="water-line" />
           <div className="shore-rock shore-rock-left" />
           <div className="shore-rock shore-rock-left-two" />
