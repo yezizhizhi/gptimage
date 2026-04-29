@@ -803,6 +803,24 @@ select {
   object-fit: cover;
 }
 
+.prompt-card-preview-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  text-align: center;
+  color: rgba(92, 73, 56, 0.78);
+  font-family: "Playfair Display", Georgia, "Noto Serif SC", "Songti SC", serif;
+  font-size: 28px;
+  line-height: 1.35;
+}
+
+.prompt-card-preview-fallback-large {
+  font-size: 34px;
+}
+
 .prompt-card-preview-sheet {
   width: calc(100% - 24px);
   min-height: 212px;
@@ -1196,6 +1214,57 @@ select {
   margin-top: 20px;
 }
 
+.create-page-status,
+.create-page-error {
+  margin: 16px 0 0;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.create-page-status {
+  color: var(--secondary-text);
+}
+
+.create-page-error {
+  color: #b45631;
+}
+
+.create-result-panel {
+  margin-top: 28px;
+  border-radius: 24px;
+  border: 1px solid rgba(234, 222, 210, 0.88);
+  background: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+}
+
+.create-result-preview {
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(234, 222, 210, 0.9);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.create-result-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.create-result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 18px;
+}
+
+.create-result-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .editorial-feature-wrap {
   position: relative;
   z-index: 2;
@@ -1409,5 +1478,9 @@ select {
 
   .create-page-textarea {
     min-height: 260px;
+  }
+
+  .create-result-actions {
+    justify-content: flex-start;
   }
 }

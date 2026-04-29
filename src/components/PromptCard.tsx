@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import type { PromptTemplate } from "@/src/data/promptTemplates";
 
@@ -52,15 +53,21 @@ export function PromptCard({ template, onViewDetails }: PromptCardProps) {
             "--preview-accent": palette.accent
           } as React.CSSProperties
         }
-      >
+        >
         {!imageFailed ? (
-          <img
+          <Image
             src={template.previewImage}
             alt={template.title}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1120px) 50vw, 33vw"
             className="prompt-card-preview-image"
             onError={() => setImageFailed(true)}
           />
-        ) : null}
+        ) : (
+          <div className="prompt-card-preview-fallback">
+            <span>{template.title}</span>
+          </div>
+        )}
         <div className={`prompt-card-preview-sheet${imageFailed ? "" : " prompt-card-preview-sheet-overlay"}`}>
           <span className="prompt-card-preview-chip">{template.category}</span>
           <div className="prompt-card-preview-lines">

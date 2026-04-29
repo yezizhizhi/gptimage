@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import type { PromptTemplate } from "@/src/data/promptTemplates";
 
@@ -76,13 +77,19 @@ export function PromptDetailModal({ template, open, onClose }: PromptDetailModal
           }
         >
           {!imageFailed ? (
-            <img
+            <Image
               src={template.previewImage}
               alt={template.title}
+              fill
+              sizes="(max-width: 768px) 100vw, 960px"
               className="prompt-modal-preview-image"
               onError={() => setImageFailed(true)}
             />
-          ) : null}
+          ) : (
+            <div className="prompt-card-preview-fallback prompt-card-preview-fallback-large">
+              <span>{template.title}</span>
+            </div>
+          )}
           <div className="prompt-card-preview-sheet prompt-card-preview-sheet-large">
             <span className="prompt-card-preview-chip">{template.category}</span>
             <div className="prompt-card-preview-lines">
