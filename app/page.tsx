@@ -44,10 +44,10 @@ export default function HomePage() {
       <div className="tech-orb tech-orb-left" />
       <div className="tech-orb tech-orb-right" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 pb-14 pt-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 pb-14 pt-5 sm:px-6 lg:px-8">
         <header className="cyber-nav">
           <Link href="/" className="brand-mark">
-            <span className="brand-icon">△</span>
+            <span className="brand-icon">▽</span>
             <span>GPT Image 2</span>
           </Link>
 
@@ -69,15 +69,9 @@ export default function HomePage() {
           </div>
         </header>
 
-        <section className="hero-frame hero-matchup mt-4 overflow-hidden rounded-[28px]">
-          <div className="hero-corner hero-corner-left" />
-          <div className="hero-corner hero-corner-right" />
-          <div className="hero-top-line" />
-          <div className="hero-tech-strokes hero-tech-strokes-left" />
-          <div className="hero-tech-strokes hero-tech-strokes-right" />
-
-          <div className="relative px-5 pb-6 pt-5 sm:px-6 lg:px-8 lg:pb-6 lg:pt-4">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(47,230,255,0.12),transparent_18%),radial-gradient(circle_at_72%_34%,rgba(255,112,37,0.1),transparent_14%)]" />
+        <section className="hero-frame hero-matchup mt-4 rounded-[28px]">
+          <div className="relative px-5 pb-8 pt-6 sm:px-6 lg:px-10 lg:pb-8 lg:pt-8">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_16%_34%,rgba(244,219,190,0.4),transparent_18%),radial-gradient(circle_at_84%_28%,rgba(255,233,212,0.48),transparent_20%),linear-gradient(180deg,rgba(255,255,255,0.18),transparent_22%)]" />
 
             <div className="hero-center-copy hero-center-copy-match relative mx-auto text-center">
               <h1 className="hero-title hero-title-match hero-title-single mt-1">
@@ -91,15 +85,23 @@ export default function HomePage() {
               </p>
             </div>
 
-            <InteractiveGenerator />
+            <div className="relative mx-auto mt-6 max-w-[980px]">
+              <InteractiveGenerator />
+            </div>
 
-            <div className="mt-4">
+            <div className="mt-8">
               <div className="feature-grid mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
                 {features.map((feature) => (
                   <article key={feature.title} className="feature-card">
                     <div className="feature-icon">◎</div>
-                    <h4 className="mt-3 text-base font-semibold text-white">{feature.title}</h4>
-                    <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">{feature.copy}</p>
+                    <div>
+                      <h4 className="text-base font-semibold text-[var(--text-primary)]">
+                        {feature.title}
+                      </h4>
+                      <p className="mt-2 text-sm leading-6 text-[var(--text-secondary)]">
+                        {feature.copy}
+                      </p>
+                    </div>
                   </article>
                 ))}
               </div>

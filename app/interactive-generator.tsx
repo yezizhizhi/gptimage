@@ -5,12 +5,12 @@ import { useMemo, useState } from "react";
 
 const models = ["GPT Image 2"];
 const stickerThemes = [
-  "可爱贴纸",
-  "动物角色",
-  "美食甜点",
-  "表情 emoji",
-  "节日庆祝",
-  "卡通植物"
+  "科技与未来",
+  "教育科普",
+  "商业展示",
+  "节日活动",
+  "品牌海报",
+  "轻插画贴纸"
 ] as const;
 
 type Mode = "upload" | "prompt";
@@ -25,7 +25,7 @@ export function InteractiveGenerator() {
   );
   const [isGenerating, setIsGenerating] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [resultMessage, setResultMessage] = useState("选择一个方向后即可生成图片预览。");
+  const [resultMessage, setResultMessage] = useState("输入内容后即可生成图片预览。");
   const [imageDataUrl, setImageDataUrl] = useState("");
 
   const canGenerate = useMemo(() => {
@@ -41,7 +41,7 @@ export function InteractiveGenerator() {
     setSelectedFile(file);
 
     if (file) {
-      setResultMessage(`已选择文件：${file.name}。点击 Generate 可生成贴纸风格预览。`);
+      setResultMessage(`已选择文件：${file.name}。点击生成即可开始处理内容。`);
       setErrorMessage("");
     }
   };
@@ -58,7 +58,7 @@ export function InteractiveGenerator() {
 
     const userPrompt =
       mode === "upload"
-        ? `${selectedTheme}，根据文档主题生成贴纸风格插画，参考文件：${selectedFile?.name ?? ""}`
+        ? `${selectedTheme}，根据文档主题生成可视卡片风格插画，参考文件：${selectedFile?.name ?? ""}`
         : `${selectedTheme}，${prompt.trim()}`;
 
     setResultMessage("正在生成图片...");
@@ -81,7 +81,7 @@ export function InteractiveGenerator() {
       }
 
       setImageDataUrl(`data:image/png;base64,${payload.imageBase64}`);
-      setResultMessage("图片已生成，默认参数为 1024x1024，quality: low。");
+      setResultMessage("内容已生成，默认参数为 1024x1024，quality: low。");
     } catch (error) {
       const message = error instanceof Error ? error.message : "生成失败，请稍后重试。";
       setErrorMessage(message);
@@ -110,7 +110,7 @@ export function InteractiveGenerator() {
         </button>
       </div>
 
-      <div className="panel-body rounded-[22px] border border-[rgba(52,221,255,0.28)] bg-[rgba(7,15,26,0.88)] p-4 shadow-[0_0_0_1px_rgba(57,237,255,0.08),0_0_26px_rgba(44,208,255,0.1)]">
+      <div className="panel-body">
         <div className="hero-form-grid">
           <label
             className={`upload-zone upload-zone-compact ${mode === "upload" ? "active-zone" : ""}`}
@@ -150,7 +150,7 @@ export function InteractiveGenerator() {
               rows={4}
               value={prompt}
               onChange={(event) => setPrompt(event.target.value)}
-              placeholder="例如：一只戴宇航员头盔的柯基、抹茶蛋糕、开心的小番茄"
+              placeholder="输入你希望生成的主题内容或描述。例如：“量子计算的发展历程与关键技术”"
             />
           </div>
         </div>
@@ -178,7 +178,7 @@ export function InteractiveGenerator() {
             onClick={handleGenerate}
             disabled={isGenerating}
           >
-            {isGenerating ? "Generating..." : "Generate"}
+            {isGenerating ? "生成中..." : "生成可视卡片与知识图谱"}
           </button>
         </div>
 
@@ -202,7 +202,7 @@ export function InteractiveGenerator() {
                 download="gpt-image-2-sticker.png"
                 className="download-button"
               >
-                下载图片
+                下载结果
               </a>
             </div>
           </div>
