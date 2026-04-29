@@ -30,12 +30,12 @@ export function GalleryToolbar({
       </div>
 
       <div className="gallery-toolbar-controls">
+        <SearchBar value={query} onChange={onQueryChange} />
         <CategoryTabs
           categories={categories}
           activeCategory={activeCategory}
           onChange={onCategoryChange}
         />
-        <SearchBar value={query} onChange={onQueryChange} />
       </div>
     </div>
   );
