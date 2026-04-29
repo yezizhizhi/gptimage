@@ -1,6 +1,7 @@
 import { FeatureStrip } from "./components/feature-strip";
 import { GeneratorPanel } from "./components/generator-panel";
 import { HeroTitle } from "./components/hero-title";
+import { InfographicGallerySection } from "./components/infographic-gallery/infographic-gallery-section";
 import { Navbar } from "./components/navbar";
 
 export default function HomePage() {
@@ -41,6 +42,8 @@ export default function HomePage() {
             <FeatureStrip />
           </div>
         </section>
+
+        <InfographicGallerySection />
       </div>
     </main>
   );
