@@ -629,7 +629,7 @@ select {
 .infographic-gallery-shell {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 8px;
+  padding: 0 48px;
 }
 
 .gallery-section-header {
@@ -754,15 +754,11 @@ select {
   outline: none;
 }
 
-.gallery-masonry-grid {
-  column-gap: 18px;
-  column-count: 4;
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
   margin-top: 26px;
-}
-
-.gallery-masonry-item {
-  break-inside: avoid;
-  margin-bottom: 18px;
 }
 
 .prompt-card {
@@ -1157,6 +1153,11 @@ select {
   .feature-strip {
     width: min(900px, 100%);
   }
+
+  .infographic-gallery-shell {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
 }
 
 @media (max-width: 1120px) {
@@ -1193,8 +1194,8 @@ select {
     display: none;
   }
 
-  .gallery-masonry-grid {
-    column-count: 3;
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -1258,8 +1259,8 @@ select {
     font-size: 15px;
   }
 
-  .gallery-masonry-grid {
-    column-count: 1;
+  .gallery-grid {
+    grid-template-columns: 1fr;
   }
 
   .prompt-modal {
@@ -1273,17 +1274,5 @@ select {
   .prompt-modal-actions {
     flex-wrap: wrap;
     justify-content: flex-start;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1199px) {
-  .gallery-masonry-grid {
-    column-count: 2;
-  }
-}
-
-@media (min-width: 1600px) {
-  .gallery-masonry-grid {
-    column-count: 5;
   }
 }

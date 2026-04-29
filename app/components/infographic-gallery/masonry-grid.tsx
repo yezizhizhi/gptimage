@@ -15,16 +15,15 @@ export function MasonryGrid({
   onCopy
 }: MasonryGridProps) {
   return (
-    <div className="gallery-masonry-grid">
+    <div className="gallery-grid">
       {items.map((item) => (
-        <div key={item.id} className="gallery-masonry-item">
-          <PromptCard
-            item={item}
-            onViewDetail={onViewDetail}
-            onGenerate={onGenerate}
-            onCopy={onCopy}
-          />
-        </div>
+        <PromptCard
+          key={item.id}
+          item={item}
+          onViewDetail={onViewDetail}
+          onGenerate={onGenerate}
+          onCopy={onCopy}
+        />
       ))}
     </div>
   );
