@@ -1,29 +1,16 @@
-import type { PromptItem } from "./mock-data";
-import { PromptCard } from "./prompt-card";
+import type { PromptTemplate } from "@/src/data/promptTemplates";
+import { PromptCard } from "@/src/components/PromptCard";
 
 type MasonryGridProps = {
-  items: PromptItem[];
-  onViewDetail: (item: PromptItem) => void;
-  onGenerate: (item: PromptItem) => void;
-  onCopy: (item: PromptItem) => void;
+  items: PromptTemplate[];
+  onViewDetail: (item: PromptTemplate) => void;
 };
 
-export function MasonryGrid({
-  items,
-  onViewDetail,
-  onGenerate,
-  onCopy
-}: MasonryGridProps) {
+export function MasonryGrid({ items, onViewDetail }: MasonryGridProps) {
   return (
     <div className="gallery-grid">
       {items.map((item) => (
-        <PromptCard
-          key={item.id}
-          item={item}
-          onViewDetail={onViewDetail}
-          onGenerate={onGenerate}
-          onCopy={onCopy}
-        />
+        <PromptCard key={item.id} template={item} onViewDetails={onViewDetail} />
       ))}
     </div>
   );

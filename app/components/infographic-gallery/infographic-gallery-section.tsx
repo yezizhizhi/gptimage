@@ -1,31 +1,37 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { promptCategories, promptItems, type PromptCategory, type PromptItem } from "./mock-data";
+import { PromptDetailModal } from "@/src/components/PromptDetailModal";
+import type { PromptTemplate } from "@/src/data/promptTemplates";
+import { getPromptTemplates } from "@/src/lib/getPromptTemplates";
+import { promptCategories, type PromptCategory } from "./mock-data";
 import { SectionHeader } from "./section-header";
 import { GalleryToolbar } from "./gallery-toolbar";
 import { MasonryGrid } from "./masonry-grid";
-import { PromptDetailModal } from "./prompt-detail-modal";
 
 export function InfographicGallerySection() {
   const [activeCategory, setActiveCategory] = useState<PromptCategory>("全部");
   const [query, setQuery] = useState("");
-  const [selectedItem, setSelectedItem] = useState<PromptItem | null>(null);
+  const [selectedTemplate, setSelectedTemplate] = useState<PromptTemplate | null>(null);
+  const templates = useMemo(() => getPromptTemplates(), []);
 
-  const filteredItems = useMemo(() => {
+  const filteredTemplates = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
 
-    return promptItems.filter((item) => {
-      const matchesCategory = activeCategory === "全部" || item.category === activeCategory;
+    return templates.filter((template) => {
+      const matchesCategory =
+        activeCategory === "全部" || template.category === activeCategory;
       const matchesQuery =
         normalizedQuery.length === 0 ||
-        item.title.toLowerCase().includes(normalizedQuery) ||
-        item.description.toLowerCase().includes(normalizedQuery) ||
-        item.tags.some((tag) => tag.toLowerCase().includes(normalizedQuery));
+        template.title.toLowerCase().includes(normalizedQuery) ||
+        template.description.toLowerCase().includes(normalizedQuery) ||
+        template.category.toLowerCase().includes(normalizedQuery) ||
+        template.promptPreview.toLowerCase().includes(normalizedQuery) ||
+        template.tags.some((tag) => tag.toLowerCase().includes(normalizedQuery));
 
       return matchesCategory && matchesQuery;
     });
-  }, [activeCategory, query]);
+  }, [activeCategory, query, templates]);
 
   const handleCategoryChange = (category: PromptCategory) => {
     setActiveCategory(category);
@@ -33,20 +39,6 @@ export function InfographicGallerySection() {
 
   const handleQueryChange = (value: string) => {
     setQuery(value);
-  };
-
-  const handleCopy = async (item: PromptItem) => {
-    try {
-      await navigator.clipboard.writeText(item.promptFull);
-    } catch {
-      // ignore clipboard failures in preview UI
-    }
-  };
-
-  const handleGenerate = (item: PromptItem) => {
-    setQuery(item.title);
-    const section = document.getElementById("generator");
-    section?.scrollIntoView({ behavior: "smooth", block: "center" });
   };
 
   return (
@@ -62,19 +54,30 @@ export function InfographicGallerySection() {
           onQueryChange={handleQueryChange}
         />
 
-        <MasonryGrid
-          items={filteredItems}
-          onViewDetail={setSelectedItem}
-          onGenerate={handleGenerate}
-          onCopy={handleCopy}
-        />
+        {filteredTemplates.length > 0 ? (
+          <MasonryGrid items={filteredTemplates} onViewDetail={setSelectedTemplate} />
+        ) : (
+          <div className="gallery-empty-state">
+            <h3>没有找到相关 Prompt 模板</h3>
+            <p>试试更短的关键词，或者切换到其他分类看看。</p>
+            <button
+              type="button"
+              className="prompt-card-link gallery-empty-action"
+              onClick={() => {
+                setQuery("");
+                setActiveCategory("全部");
+              }}
+            >
+              清空搜索
+            </button>
+          </div>
+        )}
       </div>
 
       <PromptDetailModal
-        item={selectedItem}
-        onClose={() => setSelectedItem(null)}
-        onGenerate={handleGenerate}
-        onCopy={handleCopy}
+        template={selectedTemplate}
+        open={!!selectedTemplate}
+        onClose={() => setSelectedTemplate(null)}
       />
     </section>
   );

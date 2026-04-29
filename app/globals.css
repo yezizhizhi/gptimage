@@ -785,12 +785,22 @@ select {
 .prompt-card-preview {
   width: 100%;
   min-height: 236px;
+  position: relative;
   border: 0;
   padding: 0;
   background:
     radial-gradient(circle at 80% 22%, var(--preview-accent), transparent 18%),
     linear-gradient(180deg, var(--preview-top), var(--preview-bottom));
   overflow: hidden;
+}
+
+.prompt-card-preview-image,
+.prompt-modal-preview-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .prompt-card-preview-sheet {
@@ -804,6 +814,13 @@ select {
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.22s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.prompt-card-preview-sheet-overlay {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(10px);
 }
 
 .prompt-card:hover .prompt-card-preview-sheet {
@@ -1013,11 +1030,13 @@ select {
 }
 
 .prompt-modal-preview {
+  position: relative;
   border-radius: 22px;
   background:
     radial-gradient(circle at 80% 22%, var(--preview-accent), transparent 18%),
     linear-gradient(180deg, var(--preview-top), var(--preview-bottom));
   padding: 16px;
+  overflow: hidden;
 }
 
 .prompt-modal-content {
@@ -1070,10 +1089,110 @@ select {
   line-height: 1.8;
 }
 
+.prompt-modal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
 .prompt-modal-actions {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
+  margin-top: 20px;
+}
+
+.gallery-empty-state {
+  margin-top: 26px;
+  border-radius: 22px;
+  border: 1px solid rgba(234, 222, 210, 0.84);
+  background: rgba(255, 255, 255, 0.66);
+  padding: 42px 24px;
+  text-align: center;
+  box-shadow: 0 14px 34px rgba(174, 132, 88, 0.06);
+}
+
+.gallery-empty-state h3 {
+  margin: 0;
+  color: var(--primary-text);
+  font-family: "Playfair Display", Georgia, "Noto Serif SC", "Songti SC", serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.gallery-empty-state p {
+  margin: 10px 0 0;
+  color: var(--secondary-text);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.gallery-empty-action {
+  margin-top: 18px;
+}
+
+.create-page-shell {
+  min-height: 100vh;
+  padding: 40px 24px 56px;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(247, 215, 183, 0.3), transparent 18%),
+    radial-gradient(circle at 82% 12%, rgba(255, 229, 207, 0.24), transparent 18%),
+    linear-gradient(180deg, #faf4ed 0%, #f8f1e8 100%);
+}
+
+.create-page-card {
+  max-width: 980px;
+  margin: 0 auto;
+  border-radius: 24px;
+  border: 1px solid rgba(234, 222, 210, 0.88);
+  background: rgba(255, 251, 246, 0.9);
+  box-shadow: 0 20px 48px rgba(171, 129, 88, 0.1);
+  padding: 36px;
+}
+
+.create-page-eyebrow {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.create-page-title {
+  margin: 0;
+  color: var(--primary-text);
+  font-family: "Playfair Display", Georgia, "Noto Serif SC", "Songti SC", serif;
+  font-size: clamp(38px, 5vw, 56px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.create-page-subtitle {
+  margin: 14px 0 0;
+  color: var(--secondary-text);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.create-page-textarea {
+  width: 100%;
+  min-height: 320px;
+  margin-top: 24px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.82);
+  padding: 18px 20px;
+  color: var(--primary-text);
+  font-size: 15px;
+  line-height: 1.8;
+  resize: vertical;
+  outline: none;
+}
+
+.create-page-actions {
+  display: flex;
+  justify-content: flex-end;
   margin-top: 20px;
 }
 
@@ -1196,6 +1315,10 @@ select {
   .gallery-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .prompt-modal-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1274,5 +1397,17 @@ select {
   .prompt-modal-actions {
     flex-wrap: wrap;
     justify-content: flex-start;
+  }
+
+  .create-page-shell {
+    padding: 20px 12px 32px;
+  }
+
+  .create-page-card {
+    padding: 24px 18px;
+  }
+
+  .create-page-textarea {
+    min-height: 260px;
   }
 }
