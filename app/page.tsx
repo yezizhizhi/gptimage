@@ -9,11 +9,6 @@ export default function HomePage() {
       <div className="editorial-page-backdrop" />
 
       <div className="editorial-stage">
-        <p className="editorial-kicker">
-          <span className="editorial-kicker-index">01</span>
-          <span>方向一：温暖 editorial</span>
-        </p>
-
         <section className="editorial-hero-card">
           <div className="watercolor-sky" />
           <div className="landscape" />
