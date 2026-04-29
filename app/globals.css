@@ -441,6 +441,36 @@ select {
   padding: 18px 24px 24px;
 }
 
+.generator-upload-zone {
+  display: flex;
+  min-height: 110px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 10px;
+  border: 1px dashed #eaded2;
+  background: rgba(255, 253, 251, 0.84);
+  text-align: center;
+  cursor: pointer;
+}
+
+.generator-upload-icon {
+  color: var(--accent);
+  font-size: 20px;
+}
+
+.generator-upload-title {
+  color: var(--primary-text);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.generator-upload-copy {
+  color: var(--secondary-text);
+  font-size: 12px;
+}
+
 .generator-textarea-wrap {
   position: relative;
 }
@@ -522,6 +552,73 @@ select {
 .generator-submit:hover {
   transform: translateY(-1px);
   filter: brightness(1.02);
+}
+
+.generator-submit:disabled {
+  cursor: wait;
+  opacity: 0.82;
+  transform: none;
+}
+
+.generator-feedback-row {
+  margin-top: 16px;
+  display: grid;
+  gap: 10px;
+}
+
+.generator-result-banner,
+.generator-error-banner {
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.generator-result-banner {
+  border: 1px solid rgba(234, 222, 210, 0.9);
+  background: rgba(255, 250, 244, 0.72);
+  color: var(--secondary-text);
+}
+
+.generator-error-banner {
+  border: 1px solid rgba(240, 106, 36, 0.22);
+  background: rgba(255, 242, 233, 0.82);
+  color: #b15d27;
+}
+
+.generator-preview-card {
+  margin-top: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(234, 222, 210, 0.9);
+  background: rgba(255, 255, 255, 0.72);
+  padding: 14px;
+}
+
+.generator-preview-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.generator-preview-actions {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.generator-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(240, 106, 36, 0.18);
+  background: rgba(255, 239, 225, 0.92);
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .editorial-feature-wrap {
